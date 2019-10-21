@@ -1,0 +1,139 @@
+:root {
+  --primary-color: rgba(56, 174, 255, 1);
+  --ligth-color: rgba(142, 208, 254, 1);
+  --dark-color: rgba(2, 148, 251, 1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  color: #fff;
+}
+aside {
+  background-color: var(--dark-color);
+  text-align: center;
+}
+aside h1 {
+  background-color: var(--primary-color);
+  padding: 30px 0px;
+}
+aside h3 {
+  /* background-color: var(--ligth-color); */
+  padding: 30px 0px;
+}
+aside ul {
+  padding: 0px;
+}
+aside li {
+  font-size: 1rem;
+  padding: 10px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+  padding-bottom: 10px;
+}
+.messages {
+  flex-grow: 1;
+  padding: 1rem;
+  color: #000;
+}
+.message__name {
+  display: inline-block;
+  margin-right: 0.9rem;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+.message__meta {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: rgb(182, 182, 182);
+}
+.compose {
+  display: flex;
+  padding: 10px;
+}
+.compose form {
+  flex-grow: 1;
+  display: flex;
+}
+.compose form input {
+  flex-grow: 1;
+  margin: 5px;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+}
+.compose form input:focus {
+  outline: none;
+  border: 1px solid var(--dark-color);
+}
+.btn {
+  margin: 5px;
+  display: inline-block;
+  background: var(--dark-color);
+  color: #fff;
+  border: 1px solid var(--dark-color);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  color: #f4f4f4;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.centered-form {
+  background-color: var(--dark-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.centered-form__box {
+  width: 100%;
+  max-width: 350px;
+  background-color: #ddd;
+  padding: 30px;
+}
+.centered-form__box h1 {
+  text-align: center;
+  margin: 30px 0 50px 0;
+}
+.centered-form__box form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.centered-form__box form input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.centered-form__box form input:focus {
+  outline: none;
+  border: 1px solid var(--dark-color);
+}
