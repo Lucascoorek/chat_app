@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "server": "nodemon src/index.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,7 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.7"
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4"
   }
 }

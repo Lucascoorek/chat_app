@@ -1,0 +1,23 @@
+:root {
+  --primary-color: #38aeff;
+  --ligthen-color: #8ed0fe;
+  --darken-color: #0294fb;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --warning-color: #ffd457;
+  --danger-color: #ff8457;
+  --success-color: #87fec8;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+nav {
+  background-color: var(--primary-color);
+}
