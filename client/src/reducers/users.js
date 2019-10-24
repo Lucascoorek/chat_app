@@ -1,7 +1,8 @@
 const initialState = {
   error: null,
   users: [],
-  user: null
+  user: null,
+  room: null
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +12,21 @@ export default function(state = initialState, action) {
       return {
         ...state,
         user: payload,
+        error: null
+      };
+    case 'REMOVE_USER':
+      return {
+        ...state,
+        user: null,
+        users: [],
+        error: null,
+        room: null
+      };
+    case 'ADD_USERS':
+      return {
+        ...state,
+        users: payload.users,
+        room: payload.room,
         error: null
       };
     case 'USER_ERROR':

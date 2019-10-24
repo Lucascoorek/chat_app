@@ -10,7 +10,7 @@ import Navbar from './layout/Nabvar';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
-import PrivateRoute from './components/routing/PrivateRoute';
+import PrivateRoute from './routing/PrivateRoute';
 
 function App() {
   // const socket = io('http://localhost:5000');

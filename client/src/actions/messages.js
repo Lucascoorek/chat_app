@@ -4,6 +4,6 @@ export const readMessage = data => dispatch => {
     payload: data
   });
 };
-export const sendMessage = (socket, txt) => dispatch => {
-  socket.emit('sendMessage', txt);
+export const sendMessage = (socket, txt, user) => dispatch => {
+  socket.emit('sendMessage', txt, user);
 };

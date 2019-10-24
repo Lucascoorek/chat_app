@@ -14,3 +14,15 @@ export const addUser = (socket, { username, room }, history) => dispatch => {
     }
   });
 };
+export const getUsers = usersData => dispatch => {
+  dispatch({
+    type: 'ADD_USERS',
+    payload: usersData
+  });
+};
+export const removeUser = (socket, user) => dispatch => {
+  socket.emit('removeUser', user);
+  dispatch({
+    type: 'REMOVE_USER'
+  });
+};

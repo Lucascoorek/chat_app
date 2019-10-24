@@ -1,6 +1,6 @@
 :root {
   --primary-color: #38aeff;
-  --ligthen-color: #8ed0fe;
+  --lighten-color: #8ed0fe;
   --darken-color: #0294fb;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
@@ -20,4 +20,61 @@ body {
 }
 nav {
   background-color: var(--primary-color);
+  display: flex;
+  color: var(--light-color);
+  padding: 10px;
+  justify-content: space-between;
+}
+.btn {
+  text-decoration: none;
+  color: var(--light-color);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--darken-color);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  color: var(--warning-color);
+}
+
+.btn-dark {
+  color: var(--dark-color);
+}
+
+.home {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home h1 {
+  margin: 20px 0;
+  color: var(--dark-color);
+}
+.form-group {
+  border: 1px solid var(--darken-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-group form {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.form-group form input {
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--darken-color);
+}
+.form-group form input:last-child {
+  margin-top: 20px;
+}
+.form-group form input:focus {
+  outline: none;
 }
