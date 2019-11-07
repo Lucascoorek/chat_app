@@ -8,9 +8,15 @@ const Navbar = user => {
       <h1>
         <i className='fas fa-comments'></i> ChatOn
       </h1>
-      <Link className='btn' to='/'>
-        Home
-      </Link>
+      {!user.user ? (
+        <Link className='btn' to='/'>
+          Home
+        </Link>
+      ) : (
+        <Link className='btn btn-danger' to='/'>
+          Close chat
+        </Link>
+      )}
     </nav>
   );
 };

@@ -13,7 +13,6 @@ import store from './store';
 import PrivateRoute from './routing/PrivateRoute';
 
 function App() {
-  // const socket = io('http://localhost:5000');
   return (
     <Provider store={store}>
       <div>

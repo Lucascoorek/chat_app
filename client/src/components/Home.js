@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addUser, getUsers } from '../actions/users';
-import { readMessage } from '../actions/messages';
-import socket from '../socket';
+import { addUser, getUsers, addUserToStore } from '../actions/users';
+import { readMessage, removeMessages } from '../actions/messages';
 import { Link } from 'react-router-dom';
+// import socket from '../socket';
 
-const Home = ({ addUser, readMessage, user, history, getUsers }) => {
-  useEffect(() => {
-    socket.on('message', message => readMessage(message));
-    socket.on('usersData', usersData => getUsers(usersData));
-  }, [readMessage, getUsers]);
-
+const Home = ({
+  addUser,
+  readMessage,
+  userStore,
+  history,
+  getUsers,
+  addUserToStore
+}) => {
   const [form, setForm] = useState({
     username: '',
     room: ''
@@ -19,14 +21,14 @@ const Home = ({ addUser, readMessage, user, history, getUsers }) => {
   const onChange = e => setForm({ ...form, [e.target.name]: e.target.value });
   const onSubmit = e => {
     e.preventDefault();
-    addUser(socket, { username, room }, history);
+    addUserToStore({ username, room }, history);
   };
 
-  if (!user) {
+  if (!userStore) {
     return (
       <section className='home'>
-        <h1>Welcome to ChatON</h1>
         <div className='form-group'>
+          <h1>Welcome to ChatON</h1>
           <form onSubmit={e => onSubmit(e)}>
             <label htmlFor='username'>Username</label>
             <input
@@ -45,7 +47,7 @@ const Home = ({ addUser, readMessage, user, history, getUsers }) => {
               onChange={e => onChange(e)}
             />
             <input
-              className='btn btn-dark'
+              className='btn btn-warning'
               type='submit'
               value='Start a chat'
             />
@@ -65,9 +67,9 @@ const Home = ({ addUser, readMessage, user, history, getUsers }) => {
 };
 
 const mapStateToProps = state => ({
-  user: state.users.user
+  user: state.users.userStore
 });
 export default connect(
   mapStateToProps,
-  { addUser, readMessage, getUsers }
+  { addUser, readMessage, getUsers, removeMessages, addUserToStore }
 )(Home);

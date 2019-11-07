@@ -2,6 +2,7 @@ const initialState = {
   error: null,
   users: [],
   user: null,
+  userStore: null,
   room: null
 };
 
@@ -9,6 +10,7 @@ export default function(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case 'ADD_USER':
+    case 'ADD_USER_TO_STORE':
       return {
         ...state,
         user: payload,

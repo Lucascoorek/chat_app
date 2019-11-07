@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
         ...state,
         messages: [payload, ...state.messages]
       };
+    case 'REMOVE_MESSAGES':
+      return {
+        ...state,
+        messages: []
+      };
     default:
       return state;
   }
